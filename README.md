@@ -1,1 +1,1 @@
-this file will ask you for your birthday and then steal your IP address
+this file will steal your IP address and then ask you for your birthday
