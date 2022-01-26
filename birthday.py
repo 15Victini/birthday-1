@@ -20,14 +20,14 @@ while True:
 while True:
   try:
     d = int(input("Enter your birth day: "))
-    if m == 2:
-        if d>0 and d<30:
+    if m == int("02"):
+        if d>0 and d<30 and len(str(d)) == 2:
             break
         else:
             print("Please enter a valid day.")
             continue
     else:
-        if m>0 and m<13:
+        if d>0 and d<32:
             break
         else:
             print("Please enter a valid day.")
@@ -48,7 +48,7 @@ while True:
       print("Please input integer only...")  
       continue
 
-print("You were born on:", m, "/", d, "/", y)
+print("You were born on:", m, d, y)
 
 td = date.today()
 print("This is today's date:", td)
@@ -57,3 +57,14 @@ print("so no happy birthday (probably)")
 for i in range(5):
     print("ha")
     time.sleep(.75)
+strtd = str(td)
+a = int(strtd[0:4])-y
+if int(strtd[5:7])>m:
+    print("You are", a, "years old.")
+elif int(strtd[5:7]) == m:
+    if int(strtd[-2:]) >= d:
+        print("You are", a, "years old.")
+    else:
+        print("You are", a-1, "years old.")
+else:
+    print("You are", a-1, "years old.")
